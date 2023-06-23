@@ -1,14 +1,22 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
 class Jr < Formula
   desc "JR is a CLI program that helps you to create quality random data for your applications."
   homepage "https://github.com/ugol/jr"
-  url "https://github.com/ugol/jr/releases/download/v0.2.1/jr"
-  sha256 "a4f73979d75b97d08c8f2c14554b75d04b8dfafd91a654793a8bc5a2879e0cb2"
+  url "https://github.com/ugol/jr/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "df683a21f7a81084d5b0352b8e27d290289beae1ceec8b90cfe9a3852d10a20b"
   license "MIT"
+  head "https://github.com/ugol/jr.git", branch: "main"
+
+  depends_on "go" => ["=1.20.2", :build]
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   def install
-    bin.install "jr"
+    system "make", "all"
+    bin.install Dir["build/*"]
+    prefix.install "templates"
   end
 
   test do
