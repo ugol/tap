@@ -17,6 +17,7 @@ class Jr < Formula
     system "make", "all"
     bin.install Dir["build/*"]
     prefix.install "templates"
+    prefix.install "config"
   end
 
   test do
