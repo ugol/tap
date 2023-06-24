@@ -1,8 +1,8 @@
 class Jr < Formula
   desc "JR is a CLI program that helps you to create quality random data for your applications."
   homepage "https://github.com/ugol/jr"
-  url "https://github.com/ugol/jr/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "df683a21f7a81084d5b0352b8e27d290289beae1ceec8b90cfe9a3852d10a20b"
+  url "https://github.com/ugol/jr/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "60479a6533877dd606e182b9b48c00864bd9ac072bb8e5ae898d1652803af7bd"
   license "MIT"
   head "https://github.com/ugol/jr.git", branch: "main"
 
