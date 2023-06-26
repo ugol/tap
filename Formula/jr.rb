@@ -1,8 +1,8 @@
 class Jr < Formula
   desc "JR is a CLI program that helps you to create quality random data for your applications."
   homepage "https://github.com/ugol/jr"
-  url "https://github.com/ugol/jr/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "60479a6533877dd606e182b9b48c00864bd9ac072bb8e5ae898d1652803af7bd"
+  url "https://github.com/ugol/jr/archive/refs/tags/v0.3.3.tar.gz"
+  sha256 "fa60365c0ca7b5ff70ef357ff362c7da069aa07a5daa8303f0af04ae75d04f67"
   license "MIT"
   head "https://github.com/ugol/jr.git", branch: "main"
 
@@ -15,9 +15,10 @@ class Jr < Formula
 
   def install
     system "make", "all"
+    system "cp", "-r", "templates", "config"
     bin.install Dir["build/*"]
-    prefix.install "templates"
     prefix.install "config"
+    prefix.install "templates" 
   end
 
   test do
